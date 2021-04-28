@@ -1,3 +1,8 @@
+/*
+* Reference:
+* https://codeburst.io/serving-static-files-using-a-go-web-server-d5025157a84e
+ */
+
 package main
 
 import (
