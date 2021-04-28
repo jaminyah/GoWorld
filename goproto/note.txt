@@ -1,0 +1,8 @@
+go get google.golang.org/protobuf/proto
+protoc --go_out=. *.proto
+
+--go_out flag specifies which directory the generated Go code for the .proto will be stored in.
+Using --go_out=. means keep it at the root of the project.
+
+*.proto - specifies which file to compile. We are compiling all files with .proto extension.
+protoc command generates the <name>.pb.go file.
