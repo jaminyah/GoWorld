@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"net/http"
+	"os"
 	"text/template"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -18,7 +19,7 @@ type Employee struct {
 func dbConn() (db *sql.DB) {
 	dbDriver := "mysql"
 	dbUser := "jmx"
-	dbPass := "NewYorker87"
+	dbPass := os.Getenv("MYSQL_DBPASS")
 	dbName := "goblog"
 
 	db, err := sql.Open(dbDriver, dbUser+":"+dbPass+"@/"+dbName)
@@ -166,5 +167,6 @@ func main() {
 	http.HandleFunc("/insert", Insert)
 	http.HandleFunc("/update", Update)
 	http.HandleFunc("/delete", Delete)
+
 	http.ListenAndServe(":8080", nil)
 }

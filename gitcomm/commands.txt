@@ -1,0 +1,10 @@
+// Reference: 
+https://medium.com/
+coder-nomad/how-to-reset-your-git-branch-to-a-previous-commit-both-local-and-remote-55e0351dca2b
+
+Git reset - Erase commit history
+
+Steps:
+1. $ git whatchanged                    # list commits, q to quit
+2. $ git reset --hard <commit id>       # reset the files locally
+3. $ git push -f                        # push to the remote server
